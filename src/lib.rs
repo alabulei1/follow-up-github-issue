@@ -26,7 +26,7 @@ async fn callback(_body: Vec<u8>) {
     let octocrab = get_octo(Some(login));
 
     let now = Utc::now();
-    let a_week_ago = now - Duration::days(7);
+    let a_week_ago = now - Duration::days(1);
     let a_week_ago_formatted = a_week_ago.format("%Y-%m-%d").to_string();
     let query = format!(
         "repo:{owner}/{repo} is:issue state:open comments:0 updated:>{a_week_ago_formatted}"
